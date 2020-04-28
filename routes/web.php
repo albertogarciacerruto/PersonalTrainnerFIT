@@ -53,3 +53,6 @@ Route::post('/update_about', 'LandController@update_about');
 Route::get('/contact_page', 'LandController@contact');
 Route::post('/update_contact', 'LandController@update_contact');
 
+Route::get('/users', 'LandController@users');
+Route::get('/user_delete/{id}', 'LandController@destroy_user');
+

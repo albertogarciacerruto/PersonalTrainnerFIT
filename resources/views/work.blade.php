@@ -73,99 +73,42 @@
       </div>
     </div>
   
- 
-    <div class="site-blocks-cover inner-page" style="background-image: url(images/hero_b1_1.jpg);" data-aos="fade" data-stellar-background-ratio="0.5">
+    @foreach($slides as $slide)
+    <div class="site-blocks-cover inner-page" style="background-image: url(../storage/app/{{$slide->image}});" data-aos="fade" data-stellar-background-ratio="0.5">
       <div class="row align-items-center justify-content-center">
         <div class="col-md-7 text-center" data-aos="fade">
-          <h1>Crossfits' Program</h1>
-          <span class="caption d-block text-white">Find The Healthy Way</span>
+          <h1>{{ $slide->title }}</h1>
+          <span class="caption d-block text-white">{{ $slide->subtitle}}</span>
         </div>
       </div>
     </div>  
+    @endforeach
 
-     
-
-    
     <div class="site-section">
       <div class="container">
         <div class="row">
-          <div class="col-lg-6">
-            <p class="mb-5"><img src="images/img_1.jpg" alt="Image" class="img-fluid rounded"></p>
-          </div>
-          <div class="col-lg-5 ml-auto">
-            <h2 class="site-section-heading mb-3">Body Building</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Enim ad, tempora incidunt accusantium. Similique magni quaerat beatae illo aliquid. Libero non ipsa nisi, corporis architecto incidunt rem repellendus asperiores numquam!</p>
-            <p class="mb-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Impedit explicabo odio officiis autem minima quibusdam.</p>
-            <div class="trainers-small mb-5 d-flex">
-              <div><img src="images/person_1.jpg" alt="Image" class="rounded-circle trainer first" data-toggle="tooltip" data-placement="top" title="Craig David"></div>
-              <div><img src="images/person_2.jpg" alt="Image" class="rounded-circle trainer" data-toggle="tooltip" data-placement="top" title="James Creen"></div>
-              <div><img src="images/person_3.jpg" alt="Image" class="rounded-circle trainer" data-toggle="tooltip" data-placement="top" title="Ben Smith"></div>
-            </div>
+          <div class="col-md-12">
+            <h2 class="site-section-heading text-center">Áreas Funcionales</h2>
           </div>
         </div>
       </div>
     </div>
-
+              
+    @foreach($areas as $area)   
     <div class="site-section border-top">
       <div class="container">
         <div class="row">
           <div class="col-lg-6 order-1 order-lg-2">
-            <p class="mb-5"><img src="images/img_2.jpg" alt="Image" class="img-fluid rounded"></p>
+            <p class="mb-5"><img src="../storage/app/{{$area->image}}" alt="Image" class="img-fluid rounded"></p>
           </div>
           <div class="col-lg-5 mr-auto order-2 order-lg-1">
-            <h2 class="site-section-heading mb-3">Boxing</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Enim ad, tempora incidunt accusantium. Similique magni quaerat beatae illo aliquid. Libero non ipsa nisi, corporis architecto incidunt rem repellendus asperiores numquam!</p>
-            <p class="mb-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Impedit explicabo odio officiis autem minima quibusdam.</p>
-            <div class="trainers-small mb-5 d-flex">
-              <div><img src="images/person_1.jpg" alt="Image" class="rounded-circle trainer first" data-toggle="tooltip" data-placement="top" title="Craig David"></div>
-              <div><img src="images/person_2.jpg" alt="Image" class="rounded-circle trainer" data-toggle="tooltip" data-placement="top" title="James Creen"></div>
-              <div><img src="images/person_3.jpg" alt="Image" class="rounded-circle trainer" data-toggle="tooltip" data-placement="top" title="Ben Smith"></div>
-            </div>
+            <h2 class="site-section-heading mb-3">{{ $area->title }}</h2>
+            <p>{{ $area->body }}</p>
           </div>
         </div>
       </div>
     </div>
-
-
-    <div class="site-section">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-6">
-            <p class="mb-5"><img src="images/img_3.jpg" alt="Image" class="img-fluid rounded"></p>
-          </div>
-          <div class="col-lg-5 ml-auto">
-            <h2 class="site-section-heading mb-3">Weight Lifting</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Enim ad, tempora incidunt accusantium. Similique magni quaerat beatae illo aliquid. Libero non ipsa nisi, corporis architecto incidunt rem repellendus asperiores numquam!</p>
-            <p class="mb-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Impedit explicabo odio officiis autem minima quibusdam.</p>
-            <div class="trainers-small mb-5 d-flex">
-              <div><img src="images/person_1.jpg" alt="Image" class="rounded-circle trainer first" data-toggle="tooltip" data-placement="top" title="Craig David"></div>
-              <div><img src="images/person_2.jpg" alt="Image" class="rounded-circle trainer" data-toggle="tooltip" data-placement="top" title="James Creen"></div>
-              <div><img src="images/person_3.jpg" alt="Image" class="rounded-circle trainer" data-toggle="tooltip" data-placement="top" title="Ben Smith"></div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="site-section border-top border-bottom">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-6 order-md-2">
-            <p class="mb-5"><img src="images/img_4.jpg" alt="Image" class="img-fluid rounded"></p>
-          </div>
-          <div class="col-lg-5 mr-auto order-md-1">
-            <h2 class="site-section-heading mb-3">Body Loss Weight</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Enim ad, tempora incidunt accusantium. Similique magni quaerat beatae illo aliquid. Libero non ipsa nisi, corporis architecto incidunt rem repellendus asperiores numquam!</p>
-            <p class="mb-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Impedit explicabo odio officiis autem minima quibusdam.</p>
-            <div class="trainers-small mb-5 d-flex">
-              <div><img src="images/person_1.jpg" alt="Image" class="rounded-circle trainer first" data-toggle="tooltip" data-placement="top" title="Craig David"></div>
-              <div><img src="images/person_2.jpg" alt="Image" class="rounded-circle trainer" data-toggle="tooltip" data-placement="top" title="James Creen"></div>
-              <div><img src="images/person_3.jpg" alt="Image" class="rounded-circle trainer" data-toggle="tooltip" data-placement="top" title="Ben Smith"></div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+    @endforeach 
 
     <footer class="site-footer">
       <div class="container">

@@ -3,6 +3,7 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
+use App\Contact;
 
 class CreateContactTable extends Migration
 {
@@ -23,6 +24,14 @@ class CreateContactTable extends Migration
             $table->string('email')->nullable();
             $table->timestamps();
         });
+
+        Contact::insert([
+            'title' => 'Titulo',
+            'subtitle' => 'Sub-Titulo',
+            'address' => 'Direccion',
+            'phone' => '+00 000-00-00-00',
+            'email' => 'example@example.com'
+            ]);
     }
 
     /**

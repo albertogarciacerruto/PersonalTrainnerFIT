@@ -20,7 +20,9 @@ class LandingController extends Controller
 
     public function work()
     {
-        return view('work');
+        $areas = \DB::table('areas')->get();
+        $slides = \DB::table('slides')->get();
+        return view('work', compact('areas', 'slides'));
     }
 
     public function contact()

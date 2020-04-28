@@ -24,7 +24,13 @@ class CreateAboutTable extends Migration
             $table->text('body')->nullable();
             $table->timestamps();
         });
-        
+
+        About::insert([
+        'title' => 'Titulo',
+        'subtitle' => 'Sub-Titulo',
+        'name' => 'Personal Trainner',
+        'body' => 'Biografía',
+        ]);
     }
 
     /**

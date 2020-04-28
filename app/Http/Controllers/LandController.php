@@ -298,4 +298,18 @@ class LandController extends Controller
         return redirect('contact');
     }
 
+    //PARA USUARIOS
+
+    public function users()
+    {
+        $users = \DB::table('users')->get();
+        return view('list_user', compact('users'));
+    }
+
+    public function destroy_user($id_user)
+    {
+        $user = \DB::table('users')->where('id', '=', decrypt($id_user))->delete();
+        return redirect('users');
+    }
+
 }
