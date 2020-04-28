@@ -1,6 +1,9 @@
 @extends('layouts.admin')
   @section('content')
   <div class="container">
+    <div class="container d-flex justify-content-left">
+        <a href="{{url('register_plan')}}"><button class="btn btn-primary d-flex justify-content-center" type="submit">Nuevo</button></a>
+    </div>
     <div class="row">
       <div class="col-12 mt-4">
           <div class="card">
