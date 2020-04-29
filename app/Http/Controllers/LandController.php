@@ -7,6 +7,7 @@ use App\Slide;
 use App\Plan;
 use App\Area;
 use App\Offer;
+use App\Data;
 
 class LandController extends Controller
 {
@@ -310,6 +311,55 @@ class LandController extends Controller
     {
         $user = \DB::table('users')->where('id', '=', decrypt($id_user))->delete();
         return redirect('users');
+    }
+
+    public function edit_user($id_user)
+    {
+        $user = \DB::table('users')->where('id', '=', decrypt($id_user))->first();
+        $data = \DB::table('data')->select('date', 'weight')->where('user_id', '=', $user->id)->get();
+        $file = \DB::table('data')->where('user_id', '=', $user->id)->where('file', '!=', null)->orderBy('id', 'asc')->take(1)->first();
+        $contract = \DB::table('data')->where('user_id', '=', $user->id)->where('contract', '!=', null)->orderBy('id', 'asc')->take(1)->first();
+        return view('data', compact('user', 'data', 'file', 'contract'));
+    }
+
+    public function add_data(Request $request)
+    {
+        $user_id = $request->id;
+        $height = $request->height;
+        $weight = $request->weight;
+        $date = \Carbon\Carbon::now()->toDateString();
+
+        $new = Data::insert([
+            'height' => $height,
+            'weight' => $weight,
+            'user_id' => $user_id,
+            'date' => $date,
+            ]);
+        $new = \DB::table('data')->select('id')->orderBy('id', 'desc')->first();
+        if ($request->hasFile('photo'))
+        {
+            $photo = $request->file('photo')->store('public');
+            $image = \DB::table('data')->where('id','=', $new->id)->update(['photo' => $photo]);
+        }
+
+        if ($request->hasFile('file'))
+        {
+            $file = $request->file('file')->store('public');
+            $image = \DB::table('data')->where('id','=', $new->id)->update(['file' => $file]);
+        }
+
+        if ($request->hasFile('contract'))
+        {
+            $contract = $request->file('contract')->store('public');
+            $image = \DB::table('data')->where('id','=', $new->id)->update(['contract' => $contract]);
+        }
+
+        return redirect('users');
+    }
+
+    public function upload_file($id){
+        $identificador = \DB::table('data')->where('id', '=', decrypt($id))->select('file')->first();
+        return \Storage::download($identificador->file);
     }
 
 }

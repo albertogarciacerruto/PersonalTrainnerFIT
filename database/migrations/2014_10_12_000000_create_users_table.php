@@ -21,6 +21,8 @@ class CreateUsersTable extends Migration
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
+            $table->string('role')->default('Cliente');
+            $table->boolean('status')->default(true);
             $table->rememberToken();
             $table->timestamps();
         });
@@ -29,7 +31,9 @@ class CreateUsersTable extends Migration
             'name' => 'Administrador',
             'lastname' => 'Admin',
             'email' => 'admin@admin.com',
-            'password' => 'admin'
+            'password' => Hash::make('admin'),
+            'role' => 'Administrador',
+            'status' => true
             ]);
     }
 

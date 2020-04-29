@@ -56,3 +56,8 @@ Route::post('/update_contact', 'LandController@update_contact');
 Route::get('/users', 'LandController@users');
 Route::get('/user_delete/{id}', 'LandController@destroy_user');
 
+Route::get('/edit_user/{id}', 'LandController@edit_user');
+Route::post('/add_data', 'LandController@add_data');
+
+Route::get('/upload_file/{id}', 'LandController@upload_file');
+
