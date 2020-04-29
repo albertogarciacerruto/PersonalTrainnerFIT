@@ -124,7 +124,7 @@
             @endif
         </div>
       </div>
-
+      @if(Auth::user()->role == 'Administrador')
       <div class="row">
         <div class="form-group col-lg-12">
             <label class="col-form-label">Rutina</label>
@@ -148,7 +148,7 @@
             @endif
         </div>
       </div>
-      
+      @endif
 
       <div class="container d-flex justify-content-center">
         <button class="btn btn-primary d-flex justify-content-center" type="submit">Subir Contenido</button>
