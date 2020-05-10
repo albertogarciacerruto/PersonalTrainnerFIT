@@ -27,7 +27,7 @@
                                   <td>{{ $slide->subtitle }}</td>
                                   <td class="text-center"><img height="50" width="50" src="../storage/app/{{$slide->image}}" alt="{{ $slide->image }}"></td>
                                   <td class="text-center">
-                                      <a href="{{ url('slide_delete', encrypt($slide->id)) }}"><i class="menu-icon fa fa-edit" title="Eliminar"></i></a>
+                                      <a href="{{ url('slide_delete', encrypt($slide->id)) }}"><i class="menu-icon fa fa-trash" title="Eliminar"></i></a>
                                   </td>
                               </tr>
                               @endforeach

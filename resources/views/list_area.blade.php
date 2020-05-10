@@ -23,7 +23,7 @@
                               <tr>
                                   <td>{{ $area->title }}</td>
                                   <td class="text-center">
-                                      <a href="{{ url('area_delete', encrypt($area->id)) }}"><i class="menu-icon fa fa-edit" title="Eliminar"></i></a>
+                                      <a href="{{ url('area_delete', encrypt($area->id)) }}"><i class="menu-icon fa fa-trash" title="Eliminar"></i></a>
                                   </td>
                               </tr>
                               @endforeach

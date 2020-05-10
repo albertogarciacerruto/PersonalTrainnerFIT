@@ -25,7 +25,7 @@
                                   <td>{{ $user->email }}</td>
                                   <td class="text-center">
                                     <a href="{{ url('edit_user', encrypt($user->id)) }}"><i class="menu-icon fa fa-edit" title="Editar"></i></a>
-                                    <a href="{{ url('user_delete', encrypt($user->id)) }}"><i class="menu-icon fa fa-dash" title="Eliminar"></i></a>
+                                    <a href="{{ url('user_delete', encrypt($user->id)) }}"><i class="menu-icon fa fa-trash" title="Eliminar"></i></a>
                                   </td>
                               </tr>
                               @endforeach
