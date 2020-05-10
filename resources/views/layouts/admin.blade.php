@@ -77,7 +77,6 @@
           <div class="bg-white py-2 collapse-inner rounded">
             <a class="collapse-item" href="{{url('/about_page')}}">¿Quien Soy?</a>
             <a class="collapse-item" href="{{url('/contact_page')}}">Contacto</a>
-            <a class="collapse-item" href="#">Áreas Funcionales</a>
           </div>
         </div>
       </li>
